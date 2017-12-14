@@ -3,7 +3,9 @@ const app = angular.module('Food_Cata', []);
 app.controller('MainController', ['$http', function($http)
   {
   this.test= "hello";
+  this.Recipe = '';
 
+//show all food
   this.getfoods= () => {
     $http({
        url: '/food',
@@ -16,7 +18,12 @@ app.controller('MainController', ['$http', function($http)
       console.log(error);
   }).catch(err => this.error = 'server broke?')
 }
-
 this.getfoods();
+
+
+  this.getRecipe=  (food) => {
+    this.Recipe = food;
+    console.log(this.Recipe.name);
+    }
 
 }]);
