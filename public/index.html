@@ -10,11 +10,12 @@
   <body ng-controller="MainController as ctrl">
 
     {{ctrl.test}}
-
-    <div ng-repeat= "food in ctrl.foods">
-      <h3 ng-click= 'ctrl.getRecipe(food)'>{{food.name}}</h3>
-
-    </div>
+    <table>
+      <tr ng-repeat= "food in ctrl.foods">
+      <td ng-click= 'ctrl.getRecipe(food)'>{{food.name}}</td>
+      <td ng-click= 'ctrl.deleteRecipe(food._id)'>x</td>
+    </tr>
+      </table>
 
     <div >
       <h3>{{ctrl.Recipe.name}}</h3>
