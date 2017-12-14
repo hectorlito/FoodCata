@@ -1,0 +1,23 @@
+{
+  "name": "foodcata",
+  "version": "1.0.0",
+  "description": "w08d04 homework Paige Boyer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hectorlito/FoodCata.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hectorlito/FoodCata/issues"
+  },
+  "homepage": "https://github.com/hectorlito/FoodCata#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
