@@ -81,6 +81,7 @@ this.updateRecipe2= () => {
     console.log(this.formdata);
     console.log(this.Recipe);
     console.log("formdata", response.data.formdata);
+    this.formDataUpdate = {};
   }, error =>{
     console.log(error.message);
   }).catch ( err => console.error('Catch:', err))
