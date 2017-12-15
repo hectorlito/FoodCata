@@ -42,4 +42,38 @@ this.deleteRecipe = (id) => {
   }).catch (err => console.error('Catch: ', err));
 }
 
+this.formdata = {};
+
+
+//create
+this.processForm = () => {
+  $http({
+    method: 'POST',
+    url   : '/food',
+    data  : this.formdata
+  }).then(response => {
+    this.foods.push(response.data)//NEED TO FINISH THIS LINE
+    console.table(this.foods)
+    this.formdata = {};
+  }, error => {
+    console.error(error.message);
+  }).catch(err => console.error('Catch', err));
+}
+//udpate
+this.formDataUpdate
+this.updateRecipe =  (id) => {
+  $http({
+    method : 'PUT',
+    url    : '/food/' + id,
+    data   : this.formDataUpdate
+  }).then(response => {
+    console.log(this.food);
+    console.log(this.formdata);
+    console.log(this.recipe);
+    console.log("formdata", response.data.formdata);
+  }, error =>{
+    console.log(error.message);
+  }).catch ( err => console.error('Catch:', err))
+}
+
 }]);
