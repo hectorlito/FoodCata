@@ -7,20 +7,34 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
         <script type="text/javascript" src="/js/app.js"></script>
   </head>
-  <body ng-controller="MainController as ctrl">
 
+
+
+  <body ng-controller="MainController as ctrl">
+      <h1>Food Cata</h1>
+      <hr class="style-two">
     {{ctrl.test}}
     <table>
       <tr ng-repeat= "food in ctrl.foods">
       <td ng-click= 'ctrl.getRecipe(food)'>{{food.name}}</td>
       <td ng-click= 'ctrl.deleteRecipe(food._id)'>x</td>
+      <td ng-click= 'ctrl.updateRecipe(food)'>edit</td>
     </tr>
       </table>
 
     <div >
       <h3>{{ctrl.Recipe.name}}</h3>
       <h5>{{ctrl.Recipe.type}}</h5>
+
+
     </div>
 
+    <form ng-submit="ctrl.processForm()">
+      <input type="text" placeholder="name" ng-model='ctrl.formdata.name'/>
+      <input type="text" placeholder="type" ng-model='ctrl.formdata.type'/>
+      <input type="text" placeholder="Image"
+      ng-model='ctrl.formdata.img'/>
+      <input type="submit" name="" value="submit">
+    </form>
   </body>
 </html>
