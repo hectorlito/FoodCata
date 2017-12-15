@@ -11,40 +11,43 @@
 
 
   <body ng-controller="MainController as ctrl">
-      <h1>Food Cata</h1>
-      <hr class="style-two">
-    <!-- {{ctrl.test}} -->
-    <table>
-      <tr ng-repeat= "food in ctrl.foods">
-      <td ng-click= 'ctrl.getRecipe(food)'>{{food.name}}</td>
-      <td ng-click= 'ctrl.deleteRecipe(food._id)'>x</td>
-      <td ng-click= 'ctrl.updateRecipe(food)'>edit</td>
-    </tr>
-      </table>
 
-    <div >
-      <h3>{{ctrl.Recipe.name}}</h3>
-      <h5>{{ctrl.Recipe.type}}</h5>
-      <img ng-src={{ctrl.Recipe.img}} alt="" />
+    <div id="container">
+        <h1>Food Cata</h1>
+        <hr class="style-two">
+      <!-- {{ctrl.test}} -->
+      <table>
+        <tr ng-repeat= "food in ctrl.foods">
+          <td ng-click= 'ctrl.getRecipe(food)'>{{food.name}}</td>
+          <td ng-click= 'ctrl.deleteRecipe(food._id)'>x</td>
+          <td ng-click= 'ctrl.updateRecipe(food)'>edit</td>
+      </tr>
+        </table>
+
+      <div class="show">
+        <h3>{{ctrl.Recipe.name}}</h3>
+        <h5>{{ctrl.Recipe.type}}</h5>
+        <img ng-src={{ctrl.Recipe.img}} alt="" />
+      </div>
+
+      <form ng-submit="ctrl.processForm()">
+        <h4>create form</h4>
+        <input type="text" placeholder="name" ng-model='ctrl.formdata.name'/>
+        <input type="text" placeholder="type" ng-model='ctrl.formdata.type'/>
+        <input type="text" placeholder="Image"
+        ng-model='ctrl.formdata.img' required/>
+        <input type="submit" name="" value="submit">
+      </form>
+
+  <!-- <p>{{ctrl.food.name}}</p> -->
+      <form ng-submit="ctrl.updateRecipe2()">
+        <h4>update form</h4>
+        <input type="text" placeholder="{{ctrl.food.name}}" ng-model='ctrl.formDataUpdate.name'/>
+        <input type="text" placeholder="{{ctrl.food.type}}" ng-model='ctrl.formDataUpdate.type'/>
+        <input type="text" placeholder="{{ctrl.food.img}}"
+        ng-model='ctrl.formDataUpdate.img'/>
+        <input type="submit" name="" value="submit">
+      </form>
     </div>
-
-<h4>create form</h4>
-    <form ng-submit="ctrl.processForm()">
-      <input type="text" placeholder="name" ng-model='ctrl.formdata.name'/>
-      <input type="text" placeholder="type" ng-model='ctrl.formdata.type'/>
-      <input type="text" placeholder="Image"
-      ng-model='ctrl.formdata.img' required/>
-      <input type="submit" name="" value="submit">
-    </form>
-
-<!-- <p>{{ctrl.food.name}}</p> -->
-<h4>update form</h4>
-    <form ng-submit="ctrl.updateRecipe2()">
-      <input type="text" placeholder="{{ctrl.food.name}}" ng-model='ctrl.formDataUpdate.name'/>
-      <input type="text" placeholder="{{ctrl.food.type}}" ng-model='ctrl.formDataUpdate.type'/>
-      <input type="text" placeholder="{{ctrl.food.img}}"
-      ng-model='ctrl.formDataUpdate.img'/>
-      <input type="submit" name="" value="submit">
-    </form>
   </body>
 </html>
