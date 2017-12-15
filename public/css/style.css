@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Biko_Regular';
+    src: url(Biko_Regular.otf);
+}
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), navy, rgba(0, 0, 0, 0));
+    /*background-color: #729f98;*/
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#container {
+  width: 600px;
+  margin: 70px auto;
+  font-family: 'Biko_Regular';
+}
+
+table, form, .show {
+  margin: auto;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+td {
+  border-bottom: 1px solid navy;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, h4 {
+  margin: 5px 0;
+}
