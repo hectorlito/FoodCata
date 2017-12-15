@@ -13,7 +13,7 @@
   <body ng-controller="MainController as ctrl">
       <h1>Food Cata</h1>
       <hr class="style-two">
-    {{ctrl.test}}
+    <!-- {{ctrl.test}} -->
     <table>
       <tr ng-repeat= "food in ctrl.foods">
       <td ng-click= 'ctrl.getRecipe(food)'>{{food.name}}</td>
@@ -25,7 +25,7 @@
     <div >
       <h3>{{ctrl.Recipe.name}}</h3>
       <h5>{{ctrl.Recipe.type}}</h5>
-      <img ng-src={{ctrl.Recipe.img}} alt=""/>
+      <img ng-src={{ctrl.Recipe.img}} alt="" />
     </div>
 
 <h4>create form</h4>
@@ -33,7 +33,7 @@
       <input type="text" placeholder="name" ng-model='ctrl.formdata.name'/>
       <input type="text" placeholder="type" ng-model='ctrl.formdata.type'/>
       <input type="text" placeholder="Image"
-      ng-model='ctrl.formdata.img'/>
+      ng-model='ctrl.formdata.img' required/>
       <input type="submit" name="" value="submit">
     </form>
 
