@@ -4,6 +4,7 @@ app.controller('MainController', ['$http', function($http)
   {
   this.test= "hello";
   this.Recipe = '';
+  this.food = "";
 
 //show all food
   this.getfoods= () => {
@@ -60,20 +61,30 @@ this.processForm = () => {
   }).catch(err => console.error('Catch', err));
 }
 //udpate
-this.formDataUpdate
-this.updateRecipe =  (id) => {
+this.formDataUpdate= {};
+this.updateRecipe =  (food) => {
+  console.log("this is food ", food);
+  this.food = food;
+}
+
+this.updateRecipe2= () => {
   $http({
     method : 'PUT',
-    url    : '/food/' + id,
+    url    : '/food/' + this.food._id,
     data   : this.formDataUpdate
   }).then(response => {
+       // this.food = food;
+    this.food = this.formDataUpdate;
+    const updateByIndex = this.foods.findIndex(food => food._id === response.data._id)
+    this.foods.splice(updateByIndex, 1, response.data)
     console.log(this.food);
     console.log(this.formdata);
-    console.log(this.recipe);
+    console.log(this.Recipe);
     console.log("formdata", response.data.formdata);
   }, error =>{
     console.log(error.message);
   }).catch ( err => console.error('Catch:', err))
 }
+
 
 }]);
